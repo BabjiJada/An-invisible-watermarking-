@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Watermark Results</title>
+</head>
+<body>
+    <div><h1>Watermarking Results</h1>
+
+    {% if embedded_img %}
+    <h2>Embedded Image</h2>
+    <img src="{{ embedded_img }}" alt="Embedded Image">
+    {% endif %}
+    </div>
+    <div>
+    {% if extracted_img %}
+    <h2>Extracted Watermark</h2>
+    <img src="data:image/png;base64,{{ original_watermark }}" alt="Original Watermark" width="300">
+    {% endif %}
+    <br>
+    <a href="/">Go Back</a>
+    </div>
+</body>
+</html>

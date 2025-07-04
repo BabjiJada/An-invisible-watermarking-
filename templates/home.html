@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invisible Watermarking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Invisible Watermarking</h1>
+
+        <h2>Embed Watermark</h2>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <label>Cover Image:</label>
+            <input type="file" name="cover_img" required>
+
+            <label>Watermark Image:</label>
+            <input type="file" name="watermark_img" required>
+
+            <button type="submit" name="action" value="embed">Embed Watermark</button>
+        </form>
+
+        <h2>Extract Watermark</h2>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <label>Upload Embedded Image:</label>
+            <input type="file" name="embedded_img" required>
+
+            <button type="submit" name="action" value="extract">Extract Watermark</button>
+        </form>
+    </div>
+    </form>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (localStorage.getItem("watermark")) {
+                document.getElementById("saved-watermark").src = localStorage.getItem("watermark");
+            }
+        
+            document.getElementById("watermark_img").addEventListener("change", function(event) {
+                const file = event.target.files[0];
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    localStorage.setItem("watermark", e.target.result);
+                    document.getElementById("saved-watermark").src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            });
+        });
+        </script>
+        
+</body>
+</html>
