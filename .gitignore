@@ -1,42 +1,17 @@
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.DS_Store
-.env
-venv/
-*.swp
-*.swo
-uploads/
-embedded/
-watermarks/
-*.pth
-watermark_map.json
-*.code-workspace
-
-# Ignore virtual environments
-env/
-venv/
+# Ignore virtual environment
 inv/
+
+# Python cache
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.dll
-*.so
-*.dylib
+*.py[cod]
 
-# Ignore large binary files
+# VSCode settings (optional)
+.vscode/
+
+# Ignore large files and temp stuff
+*.dll
 *.lib
-*.dll
 *.exe
-*.zip
-*.tar
-*.gz
-*.rar
-*.7z
-
-# Ignore data/model files
-*.pth
-*.pt
-models/
+*.pdb
+*.log
+*.DS_Store
