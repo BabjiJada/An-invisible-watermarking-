@@ -1,17 +1,20 @@
-# Ignore virtual environment
+# Python virtual environment
 inv/
 
-# Python cache
+# Byte-compiled / cache files
 __pycache__/
 *.py[cod]
 
-# VSCode settings (optional)
-.vscode/
+# VS Code workspace
+*.code-workspace
 
-# Ignore large files and temp stuff
-*.dll
-*.lib
-*.exe
-*.pdb
+# Logs or temp files
 *.log
-*.DS_Store
+*.tmp
+*.bak
+*.swp
+
+# Tools
+bfg-1.14.0.jar
+invisimark.bfg-report
+An-invisible-watermarking-.git/
